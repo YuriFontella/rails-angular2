@@ -1,0 +1,25 @@
+<div class="ui small modal" style="height:290px">
+	<div class="header">
+		Olá, {{user.name}} {{user.second_name}}
+	</div>
+	<div class="content">
+		<form class="ui form" [formGroup]="recoveryForm" (ngSubmit)="onRecovery(recoveryForm.value, user.reset_digest)" novalidate>
+			<div class="field">
+				<label>Senha</label>
+				<input type="password" placeholder="Defina uma nova senha" name="password" formControlName="password" required>
+			</div>
+			<div class="field">
+				<label>Confirme a senha</label>
+				<input type="password" placeholder="Confirme a nova senha" name="password_confirmation" formControlName="password_confirmation" required>
+			</div>
+
+			<input type="email" name="email" formControlName="email" [hidden]="true">
+
+			<span class="ui left floated" *ngIf="message" style="color:red">{{message}}</span>
+			<button type="submit" class="ui button teal right floated" [disabled]="submitted">Enviar</button>
+		</form>
+	</div>
+</div>
+
+
+<div style="height:75vh"></div>

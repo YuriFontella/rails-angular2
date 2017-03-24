@@ -1,0 +1,16 @@
+<div class="ui grid">
+	<div class="sixteen wide mobile six wide tablet six wide computer column">
+		<h5 class="ui header">É necessário entrar com o seu e-mail</h5>
+
+		<form class="ui attached form segment" [formGroup]="forgotForm" name="forgotForm" (ngSubmit)="recovery(forgotForm.value)" novalidate>
+			<div class="field">
+				<label>E-mail</label>
+				<input type="text" placeholder="Endereço de e-mail" name="email" formControlName="email" required>
+			</div>
+			<button class="ui button teal" type="submit" [disabled]="!forgotForm.valid || submitted">Solicitar</button>
+		</form>
+		<div class="ui error attached bottom message" [hidden]="(forgotForm.controls['email'].valid || submitted) || forgotForm.controls['email'].pristine">
+			Informe o seu e-mail de cadastro
+		</div>
+	</div>
+</div>

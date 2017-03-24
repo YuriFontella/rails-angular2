@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        name: "Nome"
+        second_name: "Sobrenome"
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação"
+        terms: "Termos"
+  activemodel:
+    errors:
+      models:
+        session:
+          attributes:
+            base:
+              invalid_login: 'E-mail ou senha incorretos, verifique!'

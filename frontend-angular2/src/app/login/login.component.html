@@ -1,0 +1,23 @@
+<div class="ui grid">
+	<div class="sixteen wide mobile six wide tablet six wide computer column">
+		<h5 class="ui header">Faça o login</h5>
+		<form class="ui form segment" #loginForm="ngForm" (ngSubmit)="authenticate(loginForm.value)" novalidate>
+			<div class="field">
+				<label>Entre com o seu e-mail</label>
+				<input type="text" placeholder="E-mail ou usuário" name="email" [(ngModel)]="email" required>
+			</div>
+			<div class="field">
+				<label>Coloque a sua senha</label>
+				<input type="password" placeholder="Senha" name="password" [(ngModel)]="password" required>
+			</div>
+			<div class="field">
+				<div class="ui checkbox">
+					<input type="checkbox" tabindex="0" class="hidden">
+					<label>Mantenha-me conectado</label>
+				</div>
+			</div>
+			<button class="ui button teal" type="submit" [disabled]="submitted || !loginForm.form.valid">Log in</button>
+			<a routerLink="/forgot">Esqueceu a senha?</a>
+		</form>
+	</div>
+</div>

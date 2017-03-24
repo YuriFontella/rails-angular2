@@ -1,0 +1,3 @@
+<%= @user.name %> <%= @user.second_name %>, parece que você não está conseguindo acessar a sua conta, clique no link abaixo para criar uma nova senha.
+
+<%= link_to "Clique aqui para criar uma nova senha", edit_recovery_url(@user.reset_token, email: @user.email) %>

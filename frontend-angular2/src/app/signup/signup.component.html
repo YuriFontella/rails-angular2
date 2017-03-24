@@ -1,0 +1,39 @@
+<div class="ui grid">
+	<div class="sixteen wide mobile six wide tablet six wide computer column">
+		<h5 class="ui header">Cadastre-se</h5>
+
+		<form class="ui form segment" [formGroup]="userForm" (ngSubmit)="createUser(userForm.value)" novalidate>
+			<div class="field">
+				<div class="two fields">
+					<div class="field" [ngClass]="{'error': userForm.controls['name'].invalid && validated}">
+						<label>Seu nome</label>
+						<input type="text" placeholder="Seu nome" name="name" formControlName="name" required>
+					</div>
+					<div class="field" [ngClass]="{'error': userForm.controls['second_name'].invalid && validated}">
+						<label>Sobrenome</label>
+						<input type="text" placeholder="Sobrenome" name="second_name" formControlName="second_name" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="field" [ngClass]="{'error': userForm.controls['email'].invalid && validated}">
+				<label>Endereço de e-mail</label>
+				<input type="email" placeholder="Endereço de e-mail" name="email" formControlName="email" required>
+			</div>
+
+			<div class="field" [ngClass]="{'error': userForm.controls['password'].invalid && validated}">
+				<label>Defina uma senha</label>
+				<input type="password" placeholder="Defina uma senha" name="password" formControlName="password" required>
+			</div>
+
+			<div class="field" [ngClass]="{'error': userForm.controls['terms'].invalid && validated}">
+				<div class="ui checkbox">
+					<input type="checkbox" name="terms" formControlName="terms" required>
+					<label>Eu aceito os termos</label>
+				</div>
+			</div>
+
+			<button class="ui button teal" type="submit" [disabled]="submitted">Cadastrar</button>
+		</form>
+	</div>
+</div>

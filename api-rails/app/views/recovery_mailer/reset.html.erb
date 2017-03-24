@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <table width="800px">
+    <tr>
+      <td width="100%">
+        <h3>Recuperação de senha</h3>
+        <p style="color:#555;"><%= @user.name %> <%= @user.second_name %>, parece que você não está conseguindo acessar a sua conta, clique no link abaixo para criar uma nova senha.</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%">
+        <%= link_to "Clique aqui para criar uma nova senha", edit_recovery_url(@user.reset_token, email: @user.email) %>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

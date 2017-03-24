@@ -1,0 +1,24 @@
+<main class="ui container">
+	<div class="ui text menu">
+		<h3 class="header item"><i class="cloud icon"></i> Project X</h3>
+		<div class="right menu" *ngIf="logged">
+			<a (click)="goodBye()" class="ui item">
+				<i class="power icon"></i> Logout
+			</a>
+		</div>
+	</div>
+
+	<router-outlet></router-outlet>
+
+	<div class="ui divider hidden"></div>
+
+	<div class="ui horizontal list">
+		<div class="disabled item">© Project X, Inc.</div>
+
+		<a class="item" routerLink="/">Home</a>
+		<a class="item" routerLink="/login">Login</a>
+		<a class="item" routerLink="/signup">Cadastre-se</a>
+	</div>
+</main>
+
+<ng2-toasty [position]="'bottom-left'"></ng2-toasty>
